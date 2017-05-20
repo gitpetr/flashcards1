@@ -14,7 +14,7 @@ class Card < ApplicationRecord
   protected
 
   def on_review
-    self.review = 3.days.from_now
+    self.review = -3.days.from_now
   end
 
   def no_equal
