@@ -8,9 +8,7 @@ class Card < ApplicationRecord
   scope :for_review, -> { where( 'review <= ?', Time.now ) }
 
   def comparison(txt)
-    if self.original == txt
-        self.update_attributes(review: 3.days.from_now)
-     end
+    self.update_attributes(review: 3.days.from_now) if self.original == txt
   end
 
   protected
