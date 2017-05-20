@@ -6,7 +6,7 @@ rvm:
 addons:
   firefox: latest
 before_script:
-  - cp config/database.travis.yml config/database.yml
+  - cp  config/database.yml config/database.travis.yml
   - psql -c 'create database flashcards_test;' -U postgres
   - bin/rake db:migrate RAILS_ENV=test
   - export DISPLAY=:99.0
